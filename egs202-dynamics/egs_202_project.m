@@ -27,9 +27,11 @@ m_c = raw_m_c * 1000 % convert [Mg] to [kg]
 % Initialize raw initial velocity of truck 
 raw_v_c_i = 0 % [km/hr]; car starts at rest
 v_c_i = raw_v_c_i * (10^3/60^2)% convert [km/hr] to [m/s] (better for energy analysis)
-% (The above step seems trivial for the car initially at rest, though leaving 
-% this step in here makes this MATLAB script more extensible.)
 %
+% (The above step seems trivial for the car initially at rest in this problem, 
+% though leaving this step in here makes this MATLAB script more extensible.)
+% 
+% --- Solving  ---
 % 
 % # Conservation of Momentum
 % * Consider this an inelastic collision.
@@ -41,19 +43,19 @@ v_f = (m_t*v_t_i + m_c*v_c_i)/(m_t + m_c) % in [m/s]
 % # Compute loss of kinetic eneregy KE
 % * Via principle of energy conservation
 % 
-% (Looks redundant)
-raw_v_t_i = 30 % [km/hr]
-v_t_i = raw_v_t_i * (10^3/60^2) % convert to [m/s]; better units for energy analysis
-raw_v_c_i = 0 % [km/hr]; car starts at rest
-v_c_i = raw_v_c_i * (10^3/60^2)% convert to [m/s]; better for energy analysis
-v_f = (m_t*v_t_i + m_c*v_c_i)/(m_t + m_c) % in [m/s]
-% 
 % Initialize initial and final kinetic energy variables.
-
+% 
+% Initial KE:
 KE_1 = (1/2)*m_t*v_t_i^2 + (1/2)*m_c*v_c_i^2 % in [J]
+% Final KE:
 KE_2 = (1/2)*(m_t + m_c)*v_f^2 % in [J]
+% Difference of KE_1 and KE_2 for raw delta_KE:
 raw_delta_KE = KE_2 - KE_1 % still in [J]
-delta_KE = raw_delta_KE/1000
-fprintf("The final velocity is %1.2f and the change in energy is %2.1f (negative sign indicates decrease).", v_f, delta_KE)
-fprintf("The final velocity is %1.2f [m/s] and the change in energy is %2.1f [kJ] (negative sign indicates decrease).", v_f, delta_KE)
+delta_KE = raw_delta_KE/1000 % convert [J] to [kJ] for engineering notation
+% 
+% Print out nicely formatted results in stout (standard output):
 fprintf("The final velocity is %1.2f [m/s] (positive means still moving to the left) and the change in energy is %2.1f [kJ] (negative sign means loss of KE).", v_f, delta_KE)
+% 
+% (You may have to alter how floating numbers are displayed if you alter the 
+% script for your own use case; as well as the positive/negative and
+% corresponding left/right direction or loss/increase of KE.)
