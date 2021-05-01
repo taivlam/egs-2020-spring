@@ -6,4 +6,4 @@ It turns out I am quite bad at preserving my own digital files, so I must keep a
 
 # License
 
-(I'm getting to this.)
+All the MATLAB, Markdown, and image files contained herein are licensed under the GPL license, version 3.
