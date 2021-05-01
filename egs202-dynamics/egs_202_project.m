@@ -56,6 +56,8 @@ delta_KE = raw_delta_KE/1000 % convert [J] to [kJ] for engineering notation
 % Print out nicely formatted results in stout (standard output):
 fprintf("The final velocity is %1.2f [m/s] (positive means still moving to the left) and the change in energy is %2.1f [kJ] (negative sign means loss of KE).", v_f, delta_KE)
 % 
+% The answers should be: final velocity is +5.21 [m/s] to the left and an energy loss of 32.6 [kJ] (negative).
+% 
 % (You may have to alter how floating numbers are displayed if you alter the 
 % script for your own use case; as well as the positive/negative and
 % corresponding left/right direction or loss/increase of KE.)
