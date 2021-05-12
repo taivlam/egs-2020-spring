@@ -14,7 +14,7 @@ Since MATLAB Online is not hacking friendly (as in tinkering, not reverse-engine
 
 Instead, I discovered a "no tech" hack to retriving all of your MATLAB online command line history that works well, especially if you have fewer than 100 lines of command history:
 
-1)  Simply hold the `Shift` key while holding the Up arrow key until all of your command history is in the "current line".
+1)  Simply hold the `Shift` key while holding the `↑` Up Arrow key until all of your command history is in the "current line".
 2)  Then, copy and paste the entire command history using `Ctrl`+`C` and paste in a text editor window instance to remove any unwanted lines.
 
 As you can see, there is always a way to make most things work in Linux if you invest enough time into it more than 99% of the time...
